@@ -1,0 +1,244 @@
+/*
+* @Description: 动画文件
+* @Author: cmk
+* @Date: 2021-04-26 17:23:05
+ * @Last Modified by: ytx
+ * @Last Modified time: 2021-07-08 08:34:21
+*/
+
+$__animate-duration: 0.2s;
+$__animate-delay: 0.2s;
+$__animate-repeat: 1;
+
+// 向左 向右 向上 向下
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-bottom-enter-active,
+.slide-bottom-leave-active,
+.slide-top-enter-active,
+.slide-top-leave-active {
+  will-change: transform;
+  transition: all 400ms;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+}
+
+.slide-right-enter {
+  opacity: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+.slide-left-enter {
+  opacity: 0;
+  transform: translate3d(10%, 0, 0);
+}
+
+.slide-left-leave-active {
+  opacity: 0;
+  transform: translate3d(-10%, 0, 0);
+}
+
+.slide-bottom-enter {
+  opacity: 0;
+  transform: translate3d(0, 10%, 0);
+}
+
+.slide-bottom-leave-active {
+  opacity: 0;
+  transform: translate3d(0, 10%, 0);
+}
+
+.slide-top-enter {
+  opacity: 0;
+  transform: translate3d(0, 100px, 0);
+}
+
+.slide-top-leave-active {
+  opacity: 0;
+  transform: translate3d(0, -100px, 0);
+}
+
+// 向左移出 显示 向右移出消失
+.move-left-enter-active,
+.move-left-leave-active,
+.move-right-enter-active,
+.move-right-leave-active,
+.move-top-enter-active,
+.move-top-leave-active {
+  will-change: transform;
+  transition: all 400ms linear 0s !important;
+}
+.move-left-enter {
+  opacity: 0;
+  transform: translate3d(-90%, 0, 0);
+}
+.move-left-leave-active {
+  opacity: 0;
+  transform: translate3d(-90%, 0, 0);
+}
+
+.move-right-enter {
+  opacity: 0;
+  transform: translate3d(10%, 0, 0);
+}
+.move-right-leave-active {
+  opacity: 0;
+  transform: translate3d(-10%, 0, 0);
+}
+.move-top-enter {
+  opacity: 0;
+  transform: translate3d(0, -10%, 0);
+}
+.move-top-leave-active {
+  opacity: 0;
+  transform: translate3d(0, -10%, 0);
+}
+
+@keyframes clockwise {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes counterclockwise {
+  0% {
+    transform: rotate(1turn);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.animate__animated {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-duration: $__animate-duration;
+  animation-duration: $__animate-duration;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(-5%, 0, 0);
+    transform: translate3d(-5%, 0, 0);
+  }
+}
+.animate__fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(2%, 0, 0);
+    transform: translate3d(2%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animate__fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+.rightEnterLeftLeave-enter-active {
+  will-change: transform;
+  transition: all 400ms;
+  transform: translate3d(0, -10%, 0);
+}
+.rightEnterLeftLeave-leave-active {
+  will-change: transform;
+  transition: all 50ms !important;
+}
+.rightEnterLeftLeave-enter {
+  opacity: 0;
+  transform: translate3d(0, 20%, 0);
+}
+.rightEnterLeftLeave-leave-active {
+  opacity: 0;
+  // transform: translate3d(-10%, 0, 0);
+}
+.rightEnterLeftLeaveMove-leave-active {
+  transition: all 100ms !important;
+  opacity: 0;
+  transform: translate3d(-10%, 0, 0);
+}
+
+.topEnterBottomLeave-enter-active {
+  will-change: transform;
+  transition: all 300ms;
+}
+.topEnterBottomLeave-leave-active {
+  will-change: transform;
+  transition: all 50ms !important;
+}
+.topEnterBottomLeave-enter {
+  opacity: 0;
+  transform: translate3d(0, -10%, 0);
+}
+.topEnterBottomLeave-leave-active {
+  opacity: 0;
+  // transform: translate3d(-10%, 0, 0);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+.fadeInUp-enter-active {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+.fadeInUp-leave-active {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+  animation-duration: 0s !important;
+}
+
+.fadeOutOpaticy-enter-active,
+.fadeOutOpaticy-leave-active {
+  will-change: transform;
+  transition: all 400ms linear 0s;
+}
+.fadeOutOpaticy-enter {
+  opacity: 0;
+}
+.fadeOutOpaticy-leave-active {
+  opacity: 0;
+}
